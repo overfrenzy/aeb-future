@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'aeb-future';
-  SelectedExperience: string = 'Нет';
-  changeAnswer(Experience: string) {
-    this.SelectedExperience = Experience;
   }
-}
