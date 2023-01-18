@@ -1,0 +1,9 @@
+<p>fetch-data works!</p>
+
+{{ myData | json }}
+
+<ul>
+    <li *ngFor="let item of myData$ | async">
+        {{ item.id }}
+    </li>
+</ul>

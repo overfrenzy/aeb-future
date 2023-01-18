@@ -1,7 +1,3 @@
-<div class="max-w-2xl container mx-auto pt-5">
-
-<h1 class="font-bold mb-2 text-center text-lg">{{ title | titlecase }}</h1>
-
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -10,34 +6,39 @@
     <title>Анкета</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.css" rel="stylesheet" />
   </head>
+
+<div class="max-w-2xl container mx-auto pt-5"> 
   <body>
-<form method="get">
+
+    <h1 class="font-bold mb-2 text-center text-lg">{{ title | titlecase }}</h1>
+
+<form #applicantForm="ngForm" (ngSubmit)="onSend(applicantForm.value)">
   <div class="mb-6">
     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">ФИО</label>
-    <input type="text" id="studentname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+    <input type="text" name="studentname" ngModel class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
 </div>
   <div class="grid gap-6 mb-6 md:grid-cols-3">
       <div>
           <label for="birthday" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Дата Рождения</label>
-          <input type="date" id="birthday" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+          <input type="date" name="birthday" ngModel class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
       </div>
       <div>
           <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Курс</label>
-          <input type="text" id="year" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+          <input type="text" name="year" ngModel class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
       </div>
       <div>
           <label for="group" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Группа</label>
-          <input type="text" id="Name_group" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+          <input type="text" name="Name_group" ngModel class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
       </div>  
   </div>
   <div class="grid gap-6 mb-6 md:grid-cols-2">
   <div class="mb-6">
     <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Номер Телефона</label>
-    <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+    <input type="tel" name="phone" ngModel class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
   </div>
   <div class="mb-6">
       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Email</label>
-      <input type="email" id="Email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+      <input type="email" name="Email" ngModel class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
   </div>
 </div>
   
@@ -47,49 +48,49 @@
 <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-black">
     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
         <div class="flex items-center pl-3">
-            <input id="python" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+            <input name="python" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
             <label for="python" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Python</label>
         </div>
     </li>
     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
         <div class="flex items-center pl-3">
-            <input id="c#" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-            <label for="c#" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">C#</label>
+            <input name="csharp" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+            <label for="csharp" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">C#</label>
         </div>
     </li>
     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
         <div class="flex items-center pl-3">
-            <input id="c++" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-            <label for="c++" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">C++</label>
+            <input name="cplusplus" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+            <label for="cplusplus" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">C++</label>
         </div>
     </li>
     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
         <div class="flex items-center pl-3">
-            <input id="php" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+            <input name="php" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
             <label for="php" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">PHP</label>
         </div>
     </li>
     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
       <div class="flex items-center pl-3">
-          <input id="html" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+          <input name="html" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
           <label for="html" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">HTML</label>
       </div>
   </li>
   <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
     <div class="flex items-center pl-3">
-        <input id="js" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+        <input name="js" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
         <label for="js" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">JS</label>
     </div>
 </li>
 <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
   <div class="flex items-center pl-3">
-      <input id="java" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+      <input name="java" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
       <label for="java" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Java</label>
   </div>
 </li>
 <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
   <div class="flex items-center pl-3">
-      <input id="sql" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+      <input name="sql" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
       <label for="sql" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">SQL</label>
   </div>
 </li>
@@ -101,19 +102,19 @@
   <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
       <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
           <div class="flex items-center pl-3">
-              <input id="scrum" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              <input name="scrum" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
               <label for="scrum" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Scrum</label>
           </div>
       </li>
       <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
           <div class="flex items-center pl-3">
-              <input id="agile" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              <input name="agile" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
               <label for="agile" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Agile</label>
           </div>
       </li>
       <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
           <div class="flex items-center pl-3">
-              <input id="kanban" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              <input name="kanban" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
               <label for="kanban" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Kanban</label>
           </div>
   </ul>
@@ -124,20 +125,20 @@
 <ul class="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
         <div class="flex items-center pl-3">
+            <input name="university" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
             <label for="university" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Университет</label>
-            <input id="university" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
         </div>
     </li>
     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
         <div class="flex items-center pl-3">
+            <input name="courses" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
             <label for="courses" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Курсы</label>
-            <input id="courses" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
         </div>
     </li>
     <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
         <div class="flex items-center pl-3">
+            <input name="conferences" type="checkbox" value="" ngModel class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
             <label for="conferences" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Участие на коференциях</label>
-            <input id="conferences" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
         </div>
 </ul>
 </div>
@@ -149,26 +150,26 @@
       <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
           <div class="flex items-center mt-3 mb-3 pl-3">
             <label for="diploma" class="w-80 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Дипломная работа на тему: </label>
-            <input type="text" id="diploma" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <input type="text" name="diploma" ngModel class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
           </div>
       </li>
       <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
           <div class="flex items-center mt-3 mb-3 pl-3">
             <label for="itwork" class="w-20 block mb-2 text-sm font-medium text-gray-900 dark:text-white">В айти: </label>
-    <input type="text" id="itwork" class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <input type="text" name="itwork" ngModel class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
           </div>
       </li>
       <li class="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
           <div class="flex items-center w-20 pl-3">
-            <label for="kanban" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Нет</label>
-              <input id="kanban" type="checkbox" value="" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+            <label for="none" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Нет</label>
+              <input name="none" type="checkbox" ngModel value="" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
           </div>
   </ul>
   </div>
   
   <div class="mb-6">
     <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">Портфолио</h3>
-    <textarea id="portfolio" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="О себе"></textarea>
+    <input type="text" id="portfolio" rows="4" ngModel class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="О себе">
 
 </div>
   
@@ -177,7 +178,6 @@
 </form>
   </body>
 
-</html>
 
 </div>
 
